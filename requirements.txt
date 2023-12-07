@@ -1,0 +1,9 @@
+﻿1. Webpack
+	1.1 Babel
+	1.2 imports/exports (type="module")
+	1.3 scss
+	1.4 eslint (editorconfig)
+	1.5 Two modes
+			- DEV (Dev Server (hot reload), SourceMaps, EsLint, Not Minified JS & CSS)
+			- PROD (Minified Code)
+2. GIT
