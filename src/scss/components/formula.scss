@@ -1,5 +1,49 @@
 ﻿@import "helpers/full-helpers";
 
 .excel__formula {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: $header-height + $toolbar-height;
+  height: $formula-height;
 
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  .formula-info {
+	font-size: 18px;
+	text-align: center;
+	font-style: italic;
+	border-right: 1px solid $border-color;
+	min-width: $formula-info-cell-width;
+	font-weight: bold;
+	color: $formula-info-color;
+  }
+
+  .formula-input {
+	width: 100%;
+	
+	.input {
+	  width: 100%;
+	  margin-bottom: 2px;
+	  padding: 2px 7px;
+	  color: $formula-input-color;
+	  border: 1px solid transparent;
+	  border-radius: 2px;
+	  height: 20px;
+	  font-size: 18px;
+	  line-height: 22px;
+	  outline: none;
+	  transition: all 0.2s ease-in;
+
+	  &:hover {
+		border: 1px solid transparent;
+	  }
+
+	  &:focus {
+		border: 1px solid transparent;
+	  }
+	}
+  }
 }
