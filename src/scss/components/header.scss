@@ -21,6 +21,10 @@
 	line-height: 22px;
 	outline: none;
 	transition: all 0.2s ease-in;
+	
+	&::placeholder {
+	  color: $secondary-color;
+	}
 
 	&:hover {
 	  border: 1px solid $border-hover-color;
