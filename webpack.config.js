@@ -1,7 +1,6 @@
 ﻿const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -62,8 +61,7 @@ module.exports = {
 		}),
 		new MiniCssExtractPlugin({
 			filename: filename("css")
-		}),
-		new ESLintPlugin()
+		})
 	],
 	module: {
 		rules: [
