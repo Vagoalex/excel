@@ -3,6 +3,7 @@
 		this.$el = typeof selector === "string" ? document.querySelector(selector) : selector;
 	}
 	
+	// innerHTML
 	html(html) {
 		if(typeof html === "string") {
 			this.$el.innerHTML = html;
@@ -17,6 +18,12 @@
 		return this;
 	}
 	
+	// addEventListener
+	on(eventType, callback) {
+		this.$el.addEventListener(eventType, callback);
+	}
+	
+	// appendChild
 	append(node) {
 		if(node instanceof Dom) {
 			node = node.$el;
@@ -36,6 +43,7 @@ export function $dom(selector) {
 	return new Dom(selector);
 }
 
+// createElement
 $dom.create = (tagName, classes = "") => {
 	const el = document.createElement(tagName);
 	
