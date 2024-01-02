@@ -1,21 +1,22 @@
-﻿export class Excel {
+﻿import { $dom } from "@core/dom";
+
+export class Excel {
 	className = "excel";
 	
 	constructor(selector, options) {
-		this.$el = document.querySelector(selector);
+		this.$el = $dom(selector);
 		this.components = options?.components || [];
 	}
 	
 	getRoot() {
-		const $root = document.createElement("div");
-		$root.classList.add(this.className);
+		const $root = $dom.create("div", this.className);
 		
 		this.components.forEach(Component => {
-			const $el = document.createElement("div");
-			$el.classList.add(Component.className);
+			const $el = $dom.create("div", Component.className);
 			
 			const component = new Component($el);
-			$el.innerHTML = component.toHTML();
+			
+			$el.html(component.toHTML());
 			$root.append($el);
 		});
 		
